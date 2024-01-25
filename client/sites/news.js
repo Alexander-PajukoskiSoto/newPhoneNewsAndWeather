@@ -1,16 +1,35 @@
 import * as React from "react";
-import { View, Text, Button } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-export default function News({ news }) {
-	function logger() {
-		console.log(news);
-	}
+import { View, Text, FlatList, Button, Pressable } from "react-native";
+import NewsInfo from "../sites/newsInfo";
+export default function News({ navigation, route }) {
+	const news = route.params.news;
 	return (
 		<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-			<Text>hi</Text>
-			<Button title="hi" onPress={logger} />
+			<FlatList
+				data={news}
+				key={news.url}
+				renderItem={({ item }) => (
+					<Pressable
+						style={{
+							backgroundColor: "#",
+							paddingHorizontal: 100,
+							paddingVertical: 50,
+							marginHorizontal: 20,
+							borderRadius: 8,
+							borderWidth: 3,
+							marginTop: 20,
+							border: "black",
+							shadowColor: "black",
+							shadowOpacity: 0.8,
+							shadowOffset: 1,
+						}}
+						onPress={() => navigation.navigate("NewsInfo", { newsInfo: item })}
+					>
+						<Text style={{ color: "white", fontSize: 20 }}>{item.title}</Text>
+					</Pressable>
+				)}
+			/>
 		</View>
 	);
 }
+//REMEMBER TRY WITH BETTER NAME (BIG LETTER BEFORE TRYING SOMETHING ELSE)
