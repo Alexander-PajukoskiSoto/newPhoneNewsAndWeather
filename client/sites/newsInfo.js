@@ -9,12 +9,12 @@ export default function NewsInfo({ navigation, route }) {
 				<Text style={{ fontSize: 20, fontWeight: 600, margin: 20 }}>
 					{newsInfo.title}
 				</Text>
-				<Text style={{ fontSize: 17 }}>{newsInfo.abstract}</Text>
+				<Text style={{ fontSize: 17, margin: 10 }}>{newsInfo.abstract}</Text>
 				<Image
 					style={{ width: "100%", height: 300 }}
 					source={{ uri: newsInfo.multimedia[0].url }}
 				/>
-				<Text>&copy;</Text>
+				<Text>&copy;{newsInfo.multimedia[0].copyright}</Text>
 			</ScrollView>
 		</View>
 	);

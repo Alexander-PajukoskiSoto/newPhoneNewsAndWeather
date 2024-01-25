@@ -11,12 +11,13 @@ export default function News({ navigation, route }) {
 				renderItem={({ item }) => (
 					<Pressable
 						style={{
-							backgroundColor: "#",
+							backgroundColor: "#3388ff",
 							paddingHorizontal: 100,
 							paddingVertical: 50,
 							marginHorizontal: 20,
 							borderRadius: 8,
 							borderWidth: 3,
+							borderColor: "#888888",
 							marginTop: 20,
 							border: "black",
 							shadowColor: "black",
