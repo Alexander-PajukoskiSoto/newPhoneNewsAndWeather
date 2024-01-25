@@ -1,14 +1,5 @@
 import * as React from "react";
-import {
-	View,
-	Text,
-	FlatList,
-	Pressable,
-	Image,
-	ScrollView,
-} from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View, Text, Image, ScrollView } from "react-native";
 
 export default function NewsInfo({ navigation, route }) {
 	newsInfo = route.params.newsInfo;
@@ -23,6 +14,7 @@ export default function NewsInfo({ navigation, route }) {
 					style={{ width: "100%", height: 300 }}
 					source={{ uri: newsInfo.multimedia[0].url }}
 				/>
+				<Text>&copy;</Text>
 			</ScrollView>
 		</View>
 	);
