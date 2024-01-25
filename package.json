@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@react-navigation/native": "^6.1.9",
     "expo": "^50.0.3"
   }
 }
